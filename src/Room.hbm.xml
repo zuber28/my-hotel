@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+    <class name="com.mikadosolutions.training.springmvc.bean.Room" table="RoomMaster">
+    	<id name="roomNumber" column="roomNo"/>
+    	<many-to-one name="roomType" column="TypeId" class="com.mikadosolutions.training.springmvc.bean.RoomType" not-null="true"/>
+    	<property name="roomStatus" column="roomStatus"/>
+    </class>
+    
+    <class name="com.mikadosolutions.training.springmvc.bean.RoomType" table="RoomTypeMaster">
+    	<id name="typeId" column="typeId"/>
+    	<property name="typeName" column="typeName"/>
+    </class>
+</hibernate-mapping>
